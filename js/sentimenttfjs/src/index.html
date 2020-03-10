@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-  <title>Fake_NEWS</title>
+<title>Fake_NEWS</title>
 
   <!-- Tab links -->
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+  <button class="tablinks" onclick="opentab(event, 'Statement_Justification')">Model_1</button>
+  <button class="tablinks" onclick="opentab(event, 'Click_Bait')">Model_2</button>
+  <button class="tablinks" onclick="opentab(event, 'Summary')">Model_3</button>
 </div>
 
 <!-- Tab content -->
-<div id="London" class="tabcontent">
+<div id="Statement_Justification" class="tabcontent">
   <h3></h3>
   <meta charset="UTF-8">
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1">
@@ -49,19 +49,19 @@
       <h2 class="oj-header-border">DESCRIPTION</h2>
       This sample is using TensorFlow.js to predict fake news 
       <br/><br/>
-      <h2 class="oj-header-border">EXAMPLES:</h2>
+      <!-- <h2 class="oj-header-border">EXAMPLES:</h2>
       1. Positive: Location near Trafalgar square is excellent. Rooms a reasonable size for inner London
       <br/>
       2. Negative: Strange smell in the room due to newly painted or new carpet
+      <br/><br/> -->
+      <h2 class="oj-header-border">Statement</h2>
+      <textarea rows="3" cols="120" data-bind='value: reviewText0, valueUpdate: "input"'></textarea>
       <br/><br/>
-      <h2 class="oj-header-border">HOTEL REVIEW</h2>
-      <textarea rows="5" cols="120" data-bind='value: reviewText0, valueUpdate: "input"'></textarea>
-      <br/><br/>
-      <h2 class="oj-header-border">HOTEL REVIEW</h2>
-      <textarea rows="5" cols="120" data-bind='value: reviewText1, valueUpdate: "input"'></textarea>
+      <h2 class="oj-header-border">Justification</h2>
+      <textarea rows="7" cols="120" data-bind='value: reviewText1, valueUpdate: "input"'></textarea>
       <br/><br/>
 
-      <h2 class="oj-header-border">PREDICTED SENTIMENT: POSITIVE (0), NEGATIVE (1)</h2>
+      <h2 class="oj-header-border">PREDICTED FAKE NEWS PROBABILITY: POSITIVE (0), NEGATIVE (1)</h2>
       <span style="font-size: 15px;" data-bind="text: 'negativity = '"></span>
       <span style="font-size: 15px;" data-bind="text: negativityScore"></span>
       <br/><br/>
@@ -75,9 +75,9 @@
 </body>
 </div>
 
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <h3></h3>
+
+<div id="Click_Bait" class="tabcontent">
+  <h3>Clickbait</h3>
   <meta charset="UTF-8">
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1">
   <link rel="icon" href="css/images/katana.ico" type="image/x-icon" />
@@ -103,31 +103,26 @@
     <header role="banner" class="oj-web-applayout-header">
       <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
         <div class="oj-flex-bar-middle oj-sm-align-items-baseline">
-          <img src="css/images/katana_logo.png" alt="Logo" width="127px" height="50px"/>
+          <img src="css/images/iitg_logo.png" alt="Logo" width="127px" height="50px"/>
         </div>
       </div>
     </header>
     <div role="main" class="oj-web-applayout-max-width oj-web-applayout-content">
-      <h1>Hotel Review Sentiment</h1>
-      <h3>Predict sentiment for hotel review</h3>
+      <h1>Clickbait Analysis</h1>
+      <h3>Predict Probability for Clickbait</h3>
       <br/>
       <h2 class="oj-header-border">DESCRIPTION</h2>
-      This sample is using TensorFlow.js to predict hotel review sentiment while user types text. Prediction is executed on the client side, without server call.
-      This allows to provide immediate feedback to the user, this could help user to adjust hotel review before review is submitted.
+      This is CLickbait
       <br/><br/>
-      <h2 class="oj-header-border">EXAMPLES:</h2>
-      1. Positive: Location near Trafalgar square is excellent. Rooms a reasonable size for inner London
-      <br/>
-      2. Negative: Strange smell in the room due to newly painted or new carpet
-      <br/><br/>
-      <h2 class="oj-header-border">HOTEL REVIEW</h2>
+  
+      <h2 class="oj-header-border">Target_Headline</h2>
       <textarea rows="5" cols="120" data-bind='value: reviewText0, valueUpdate: "input"'></textarea>
       <br/><br/>
-      <h2 class="oj-header-border">HOTEL REVIEW</h2>
+      <h2 class="oj-header-border">Target_Summary</h2>
       <textarea rows="5" cols="120" data-bind='value: reviewText1, valueUpdate: "input"'></textarea>
       <br/><br/>
 
-      <h2 class="oj-header-border">PREDICTED SENTIMENT: POSITIVE (0), NEGATIVE (1)</h2>
+      <h2 class="oj-header-border">PREDICTED Clickbait_Probability: POSITIVE (0), NEGATIVE (1)</h2>
       <span style="font-size: 15px;" data-bind="text: 'negativity = '"></span>
       <span style="font-size: 15px;" data-bind="text: negativityScore"></span>
       <br/><br/>
@@ -141,7 +136,7 @@
 </body>
 </div>
 
-<div id="Tokyo" class="tabcontent">
+<div id="Summary" class="tabcontent">
    <h3></h3>
   <meta charset="UTF-8">
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1">
@@ -168,7 +163,7 @@
     <header role="banner" class="oj-web-applayout-header">
       <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
         <div class="oj-flex-bar-middle oj-sm-align-items-baseline">
-          <img src="css/images/katana_logo.png" alt="Logo" width="127px" height="50px"/>
+          <img src="css/images/iitg_logo.png" alt="Logo" width="150px" height=100px/>
         </div>
       </div>
     </header>
@@ -177,26 +172,18 @@
       <h3>Predict sentiment for hotel review</h3>
       <br/>
       <h2 class="oj-header-border">DESCRIPTION</h2>
-      This sample is using TensorFlow.js to predict hotel review sentiment while user types text. Prediction is executed on the client side, without server call.
-      This allows to provide immediate feedback to the user, this could help user to adjust hotel review before review is submitted.
-      <br/><br/>
-      <h2 class="oj-header-border">EXAMPLES:</h2>
-      1. Positive: Location near Trafalgar square is excellent. Rooms a reasonable size for inner London
-      <br/>
-      2. Negative: Strange smell in the room due to newly painted or new carpet
-      <br/><br/>
-      <h2 class="oj-header-border">HOTEL REVIEW</h2>
-      <textarea rows="5" cols="120" data-bind='value: reviewText0, valueUpdate: "input"'></textarea>
-      <br/><br/>
-      <h2 class="oj-header-border">HOTEL REVIEW</h2>
-      <textarea rows="5" cols="120" data-bind='value: reviewText1, valueUpdate: "input"'></textarea>
+      This sample is using TensorFlow.js to predict if an article is fake or not!!
       <br/><br/>
 
-      <h2 class="oj-header-border">PREDICTED SENTIMENT: POSITIVE (0), NEGATIVE (1)</h2>
-      <span style="font-size: 15px;" data-bind="text: 'negativity = '"></span>
-      <span style="font-size: 15px;" data-bind="text: negativityScore"></span>
+      <h2 class="oj-header-border">Body_Text</h2>
+      <textarea rows="10" cols="120" data-bind='value: reviewText0, valueUpdate: "input"'></textarea>
       <br/><br/>
-      <span style="font-size: 50px;" data-bind="text: sentiment"></span>
+
+      <h2 class="oj-header-border">PREDICTED FAKE_NEW_PROBABILITY: POSITIVE (0), NEGATIVE (1)</h2>
+      <span style="font-size: 15px;" data-bind="text: 'negativity = '"></span>
+      <span style="font-size: 15px;" data-bind="text: negativityScore1"></span>
+      <br/><br/>
+      <span style="font-size: 50px;" data-bind="text: sentiment1"></span>
     </div>
   </div>
 
@@ -209,7 +196,7 @@
 
 
 <script>
-function openCity(evt, cityName) {
+function opentab(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -223,4 +210,5 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 </script>
+
 </html>
