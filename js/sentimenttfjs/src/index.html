@@ -93,7 +93,7 @@
   <link rel="stylesheet" href="css/app.css" type="text/css" />
 </head>
 <body class="oj-web-applayout-body">
-  <div id="globalBody" class="oj-web-applayout-page">
+  <div id="global" class="oj-web-applayout-page">
     <!--
          ** Oracle JET V7.1.0 web application header pattern.
          ** Please see the demos under Cookbook/Patterns/App Shell: Web
@@ -112,21 +112,21 @@
       <h3>Predict Probability for Clickbait</h3>
       <br/>
       <h2 class="oj-header-border">DESCRIPTION</h2>
-      This is CLickbait
+      This is Clickbait
       <br/><br/>
   
       <h2 class="oj-header-border">Target_Headline</h2>
-      <textarea rows="5" cols="120" data-bind='value: reviewText0, valueUpdate: "input"'></textarea>
+      <textarea rows="5" cols="120" data-bind='value: reviewText2, valueUpdate: "input"'></textarea>
       <br/><br/>
       <h2 class="oj-header-border">Target_Summary</h2>
-      <textarea rows="5" cols="120" data-bind='value: reviewText1, valueUpdate: "input"'></textarea>
+      <textarea rows="5" cols="120" data-bind='value: reviewText3, valueUpdate: "input"'></textarea>
       <br/><br/>
 
       <h2 class="oj-header-border">PREDICTED Clickbait_Probability: POSITIVE (0), NEGATIVE (1)</h2>
       <span style="font-size: 15px;" data-bind="text: 'negativity = '"></span>
-      <span style="font-size: 15px;" data-bind="text: negativityScore"></span>
+      <span style="font-size: 15px;" data-bind="text: negativityScore1"></span>
       <br/><br/>
-      <span style="font-size: 50px;" data-bind="text: sentiment"></span>
+      <span style="font-size: 50px;" data-bind="text: sentiment1"></span>
     </div>
   </div>
 
@@ -153,7 +153,7 @@
   <link rel="stylesheet" href="css/app.css" type="text/css" />
 </head>
 <body class="oj-web-applayout-body">
-  <div id="globalBody" class="oj-web-applayout-page">
+  <div id="globB" class="oj-web-applayout-page">
     <!--
          ** Oracle JET V7.1.0 web application header pattern.
          ** Please see the demos under Cookbook/Patterns/App Shell: Web

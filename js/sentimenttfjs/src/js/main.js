@@ -52,6 +52,9 @@ require(['ojs/ojbootstrap', 'knockout', 'appController', 'ojs/ojknockout', 'ojs/
           function init() {
             // Bind your ViewModel for the content of the whole page body.
             ko.applyBindings(app, document.getElementById('globalBody'));
+            ko.applyBindings(app, document.getElementById('global'));
+            
+
           }
 
           // If running in a hybrid (e.g. Cordova) environment, we need to wait for the deviceready
