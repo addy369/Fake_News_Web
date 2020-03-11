@@ -6,6 +6,7 @@
 /*
  * Your application specific code will go here
  */
+
 define(['ojs/ojresponsiveutils', 'ojs/ojresponsiveknockoututils', 'knockout', 'tfjs', 'ojs/ojknockout'],
   function (ResponsiveUtils, ResponsiveKnockoutUtils, ko, tf) {
     function ControllerViewModel() {
@@ -63,7 +64,7 @@ define(['ojs/ojresponsiveutils', 'ojs/ojresponsiveknockoututils', 'knockout', 't
           seq = create_sequences(val);
 
           if (!worker1) {
-            worker1 = new Worker("js/worker.js");
+            worker1 = new Worker("js/worker1.js");
           }
           worker1.postMessage(seq);
           worker1.onmessage = function (event) {
@@ -73,11 +74,19 @@ define(['ojs/ojresponsiveutils', 'ojs/ojresponsiveknockoututils', 'knockout', 't
           };
         }
       });
-    
+
 
 
       async function createModel() {
         const model = await tf.loadLayersModel('js/ml/model.json')
+        return model
+      }
+
+    
+
+
+      async function createModel1() {
+        const model = await tf.loadLayersModel('js/ml0/model.json')
         return model
       }
 
@@ -87,6 +96,7 @@ define(['ojs/ojresponsiveutils', 'ojs/ojresponsiveknockoututils', 'knockout', 't
         for (var i = 0; i < out.length; i++)
           out[i] = out[i].toLowerCase()
         return out
+
       }
 
       async function loadDict() {
@@ -168,22 +178,21 @@ define(['ojs/ojresponsiveutils', 'ojs/ojresponsiveknockoututils', 'knockout', 't
     }
 
     
-    function ControllerViewModel1() {
-      var self = this;
-      var word_index;
-      var worker1;
+  //   function ControllerViewModel1() {
+  //     var self = this;
+  //     var word_index;
+  //     var worker1;
 
-      self.sentiment1 = ko.observable();
-      self.negativityScore1= ko.observable();
+  //     self.sentiment1 = ko.observable();
+  //     self.negativityScore1= ko.observable();
 
-      self.reviewText2 = ko.observable("Luxury hotel at very good value for money. Would definitely return");
-      self.reviewText3 =  ko.observable("Would definitely return");
-       // = ko.observable("");
-  }    
+  //     self.reviewText2 = ko.observable("Luxury hotel at very good value for money. Would definitely return");
+  //     self.reviewText3 =  ko.observable("Would definitely return");
+  //      // = ko.observable("");
+  // }    
     return new ControllerViewModel();
 
-    return new ControllerViewModel1();
-  
+      
 }
 );
   

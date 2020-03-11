@@ -4,11 +4,11 @@ tf.setBackend('cpu');
 var model;
 
 onmessage = async function (event) {
-    console.log('executing worker');
+    console.log('executing worker1');
     seq = event.data;
 
     if (!model) {
-        model = await createModel();
+        model = await createModel1();
     }
 
     input = tf.tensor(seq);
@@ -21,7 +21,7 @@ onmessage = async function (event) {
     predictOut.dispose();
 };
 
-async function createModel() {
-    const model = await tf.loadLayersModel('ml/model.json')
+async function createModel1() {
+    const model = await tf.loadLayersModel('ml0/model.json')
     return model
 }
